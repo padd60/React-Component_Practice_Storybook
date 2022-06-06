@@ -35,6 +35,9 @@
           // other typescript-plugin-styled-components options can be added here
           "minify": true,
           "ssr": true
+      },
+      {
+        "name": "babel-plugin-styled-components",
       }
   ]
   },

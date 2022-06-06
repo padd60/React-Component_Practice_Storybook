@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Spacer from '../components/Spacer';
 
 export default {
@@ -16,7 +17,9 @@ export default {
 };
 
 // eslint-disable-next-line react/prop-types
-const Box = ({ block }) => {
+const Box = ({
+  block, style,
+}) => {
   return (
     <div
       style={{
@@ -24,33 +27,28 @@ const Box = ({ block }) => {
         width: 100,
         height: 100,
         backgroundColor: 'blue',
+        ...style,
       }}
     />
   );
 };
 
-const Template = (args) => (
-  <Spacer {...args}>
-    <Box />
-    <Box />
-    <Box />
-  </Spacer>
-);
+export const Horizontal = (args) => {
+  return (
+    <Spacer {...args} type="horizontal">
+      <Box />
+      <Box />
+      <Box />
+    </Spacer>
+  );
+};
 
-export const Horizontal = Template.bind({});
-
-Horizontal.args = { type: 'horizontal' };
-
-export const Vertical = Template.bind({});
-
-Vertical.args = { type: 'vertical' };
-
-// export const Horizontal = (args) => {
-//   return (
-//     <Spacer {...args} type="horizontal">
-//       <Box />
-//       <Box />
-//       <Box />
-//     </Spacer>
-//   );
-// };
+export const Vertical = (args) => {
+  return (
+    <Spacer {...args} type="vertical">
+      <Box block />
+      <Box block />
+      <Box block />
+    </Spacer>
+  );
+};
