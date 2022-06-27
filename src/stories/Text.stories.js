@@ -17,7 +17,11 @@ export default {
 };
 
 export const Default = (args) => (
-  <Text {...args}>Text</Text>
+  <>
+    <Text {...args}>Text</Text>
+    <Text {...args}>Text</Text>
+    <Text {...args}>Text</Text>
+  </>
 );
 
 export const Size = (args) => (
